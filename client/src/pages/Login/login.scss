@@ -1,0 +1,59 @@
+.login {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Josefin Sans";
+  .loginH2 {
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+  }
+  .loginForm {
+    border: 1px solid gray;
+    height: 400px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px;
+    border-radius: 5px;
+
+    .label {
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+    .forgotPasswordLink {
+      margin-top: 26px;
+      color: purple;
+    }
+    .loginButton {
+      margin-top: 20px;
+      width: 150px;
+      height: 30px;
+      background-color: rgb(40, 143, 14);
+      border: 1px solid rgb(10, 106, 14);
+      color: white;
+      font-weight: 400;
+      letter-spacing: 2px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: "Josefin Sans";
+      transition: 0.3s;
+    }
+
+    .loginButton:hover {
+      background-color: white;
+      color: rgb(40, 143, 14);
+    }
+  }
+}
+
+@media (max-width: 730px) {
+  .login .loginForm {
+    width: auto;
+    height: auto;
+    gap: 10px;
+  }
+}

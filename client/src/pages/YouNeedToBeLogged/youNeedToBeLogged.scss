@@ -1,0 +1,26 @@
+.youNeedToBeLoggedContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+  margin-top: 80px;
+  font-family: "Josefin Sans";
+  h2 {
+    letter-spacing: 2px;
+    text-align: center;
+  }
+  .imgContainerYNTBL {
+    height: 30vh;
+    .imgYNTBL {
+      height: 100%;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  h2 {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+}

@@ -1,0 +1,27 @@
+.sentMessageContainer {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20vh;
+  align-items: center;
+  .sentMessageIcon {
+    margin-bottom: 50px;
+    color: green;
+    font-size: 80px;
+  }
+
+  .messageWasSentP {
+    font-size: 22px;
+    font-family: "Lora";
+    text-align: center;
+    .spanSenderName {
+      font-weight: 600;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .sentMessageContainer .messageWasSentP {
+    font-size: 16px;
+  }
+}

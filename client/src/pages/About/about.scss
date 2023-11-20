@@ -1,0 +1,146 @@
+.about {
+  min-height: 100vh;
+  margin: 0 auto;
+  max-width: 1440px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-size: 14px;
+
+  .topContent {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    .imgContainerAbout {
+      img {
+        width: 100%;
+      }
+    }
+    .paragraphContainer {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      padding: 28px;
+      .paragraph {
+        font-family: "Lora";
+        color: #444;
+        font-size: 15px;
+        letter-spacing: 2px;
+        line-height: 1.8;
+      }
+    }
+  }
+  .h2about {
+    font-family: "Lora";
+    letter-spacing: 2px;
+  }
+  .bottomContent {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    .card {
+      width: 240px;
+      height: 390px;
+      // border: 1px solid gray;
+      border-radius: 30px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0px 0px 1px 1px rgba(186, 184, 186, 1);
+      animation-duration: 2s;
+
+      .fpImg {
+        height: 180px;
+        width: 100%;
+      }
+      .textContainer {
+        // height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-left: 20px;
+        margin-top: 20px;
+        justify-content: space-between;
+        font-family: "Josefin Sans";
+
+        .infoAboutCoach {
+          display: flex;
+          align-items: center;
+
+          span {
+            font-weight: normal;
+            letter-spacing: 2px;
+          }
+          span.coachName {
+            font-weight: 800;
+            letter-spacing: 2px;
+          }
+
+          .icon {
+            color: rgb(163, 160, 160);
+            margin-right: 10px;
+          }
+        }
+      }
+      .buttonContainer {
+        align-self: center;
+        .aboutCoachButton {
+          letter-spacing: 2px;
+          padding: 2px;
+          width: 150px;
+          height: 30px;
+          background-color: #f77b00;
+          border: 1px solid #f77b00;
+          border-radius: 10px;
+          font-family: "Josefin Sans";
+          font-weight: 300;
+          color: white;
+          margin-bottom: 20px;
+          margin-top: 20px;
+
+          cursor: pointer;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+.card:hover {
+  animation-name: bounce;
+  animation-timing-function: ease;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (min-width: 750px) {
+  .about .topContent .imgContainerAbout {
+    flex: 1.2 1;
+  }
+}
+@media (max-width: 650px) {
+  .about {
+    flex-direction: column;
+  }
+  .about .topContent .paragraphContainer .paragraph {
+    font-size: 14px;
+    text-align: justify;
+  }
+}

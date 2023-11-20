@@ -1,0 +1,60 @@
+.contact {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Josefin Sans";
+  .contactH2 {
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+  }
+  .contactForm {
+    border: 1px solid gray;
+    min-height: 400px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px;
+    border-radius: 5px;
+
+    .input {
+      width: 200px;
+    }
+
+    .label {
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+
+    #contactMessage {
+    }
+    .contactButton {
+      margin-top: 50px;
+      width: 150px;
+      height: 30px;
+      background-color: rgb(64, 18, 172);
+      border: 1px solid rgb(48, 21, 102);
+      color: white;
+      font-weight: 400;
+      letter-spacing: 2px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: "Josefin Sans";
+      transition: 0.3s;
+    }
+
+    .contactButton:hover {
+      background-color: white;
+      color: rgb(64, 18, 172);
+    }
+  }
+}
+
+@media (max-width: 730px) {
+  .contact .contactForm {
+    width: auto;
+  }
+}

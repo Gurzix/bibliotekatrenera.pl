@@ -1,0 +1,63 @@
+.register {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Josefin Sans";
+  .registerH2 {
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  .registerForm {
+    border: 1px solid gray;
+    height: 400px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px;
+    border-radius: 5px;
+    .confirmRegistration {
+      margin-top: 20px;
+      color: rgb(64, 6, 95);
+      letter-spacing: 2px;
+      font-family: "Josefin Sans";
+      text-align: center;
+      line-height: 1.8;
+    }
+    .label {
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+
+    .registerButton {
+      margin-top: 50px;
+      width: 150px;
+      height: 30px;
+      background-color: rgb(208, 29, 29);
+      border: 1px solid rgb(175, 6, 6);
+      color: white;
+      font-weight: 400;
+      letter-spacing: 2px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: "Josefin Sans";
+      transition: 0.3s;
+    }
+
+    .registerButton:hover {
+      background-color: white;
+      color: rgb(208, 29, 29);
+    }
+  }
+}
+
+@media (max-width: 730px) {
+  .register .registerForm {
+    width: auto;
+    height: auto;
+    gap: 10px;
+  }
+}

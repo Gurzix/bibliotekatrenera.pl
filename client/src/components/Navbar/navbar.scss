@@ -1,0 +1,150 @@
+// .navbarSticky {
+//   box-shadow: 0px 1px 0px 0px rgba(144, 146, 144, 1);
+// }
+
+.hamburgerCloseIcon {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburgerOpenIcon {
+  display: none;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.navbar {
+  height: 80px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+  background-color: white;
+
+  .wrapper {
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+
+    .left {
+      display: flex;
+      flex: 1;
+
+      .icons {
+        display: flex;
+        gap: 10px;
+
+        a {
+          cursor: pointer;
+          transition: 0.3s;
+        }
+
+        a:hover {
+          color: rgb(16, 191, 57);
+        }
+
+        .twitter {
+          // color: #1da1f2;
+          color: #444;
+        }
+
+        .youtube {
+          // color: #ff0000;
+          color: #444;
+        }
+
+        .instagram {
+          // color: #f707e8;
+          color: #444;
+        }
+      }
+    }
+  }
+
+  .center {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex: 2;
+    gap: 25px;
+
+    .item {
+      cursor: pointer;
+      z-index: 1200;
+    }
+    .homeIcon {
+    }
+    .hideNavbarImg {
+      display: none;
+    }
+    img {
+      position: absolute;
+      top: -105px;
+      left: 31%;
+    }
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 25px;
+    margin-right: 5%;
+    flex: 2;
+  }
+}
+
+@media (max-width: 700px) {
+  .hamburgerCloseIcon {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 5%;
+    font-size: 20px;
+    z-index: 9929292;
+  }
+
+  .hamburgerOpenIcon {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 5%;
+    font-size: 20px;
+    z-index: 9929292;
+  }
+  .navbar {
+    display: none;
+  }
+  .hamburgerMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(249, 246, 246, 0.9);
+    z-index: 9929290;
+
+    .menuContainer {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-family: "Josefin Sans";
+      margin-top: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+  }
+  .icons {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+  }
+}
