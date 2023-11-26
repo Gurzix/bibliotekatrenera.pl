@@ -36,10 +36,14 @@ const upload = multer({
   }),
 });
 
-app.post("/upload", upload.array("file", 2), async function (req, res, next) {
-  // console.log(req.files[0].location, req.files[1].location);
-  res.send(req.files);
-});
+app.post(
+  "/api/upload",
+  upload.array("file", 2),
+  async function (req, res, next) {
+    // console.log(req.files[0].location, req.files[1].location);
+    res.send(req.files);
+  }
+);
 
 const connect = async () => {
   try {

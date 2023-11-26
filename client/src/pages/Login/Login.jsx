@@ -26,7 +26,7 @@ export const Login = () => {
 
     try {
       const res = await axios.post(
-        "http://45.93.139.98/api/auth/login",
+        "https://bibliotekatrenera.pl/api/auth/login",
         credentials
       );
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });

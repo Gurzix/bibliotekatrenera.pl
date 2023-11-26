@@ -84,7 +84,7 @@ const register = async (req, res) => {
     });
 
     await token.save();
-    const link = `http://45.93.139.98/api/auth/confirmEmail/${token.token}`;
+    const link = `https://bibliotekatrenera.pl/api/auth/confirmEmail/${token.token}`;
     await verifyEmail(user.email, link);
   } catch (err) {
     res.status(500).json(err);
@@ -123,7 +123,7 @@ const forgotPassword = async (req, res) => {
       expiresIn: "15m",
     });
 
-    const link = `http://45.93.139.98/api/auth/resetPassword/${oldUser.id}/${token}`;
+    const link = `https://bibliotekatrenera.pl/api/auth/resetPassword/${oldUser.id}/${token}`;
 
     // sending email with link
 

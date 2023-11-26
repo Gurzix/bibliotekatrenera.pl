@@ -9,7 +9,7 @@ import DriveFileRenameOutlineIcon from "@mui/icons-material/DriveFileRenameOutli
 export const SinglePost = () => {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
-  const { data } = useFetch(`http://45.93.139.98/api/posts/${path}`);
+  const { data } = useFetch(`https://bibliotekatrenera.pl/api/posts/${path}`);
 
   const [images, setImages] = useState();
 

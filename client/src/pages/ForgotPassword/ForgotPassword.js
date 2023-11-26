@@ -7,7 +7,7 @@ export const ForgotPassword = () => {
   const [success, setSuccess] = useState("");
   const handleClick = async (req, res) => {
     try {
-      axios.post("http://45.93.139.98/api/auth/forgotPassword", {
+      axios.post("https://bibliotekatrenera.pl/api/auth/forgotPassword", {
         email,
       });
       setSuccess("Mail wysłano");

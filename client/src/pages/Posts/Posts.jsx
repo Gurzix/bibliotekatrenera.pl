@@ -49,12 +49,12 @@ export const Posts = () => {
 
   const { data, loading, error, reFetch } = useFetch(
     location.state
-      ? `http://45.93.139.98/api/posts?title=${title}&category=${category}&howManyPlayers=${howManyPlayers}`
+      ? `https://bibliotekatrenera.pl/api/posts?title=${title}&category=${category}&howManyPlayers=${howManyPlayers}`
       : category
-      ? `http://45.93.139.98/api/posts?category=${category}`
+      ? `https://bibliotekatrenera.pl/api/posts?category=${category}`
       : howManyPlayers
-      ? `http://45.93.139.98/api/posts?howManyPlayers=${howManyPlayers}`
-      : `http://45.93.139.98/api/posts`
+      ? `https://bibliotekatrenera.pl/api/posts?howManyPlayers=${howManyPlayers}`
+      : `https://bibliotekatrenera.pl/api/posts`
   );
 
   const resetExercises = () => {

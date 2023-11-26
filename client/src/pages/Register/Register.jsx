@@ -26,7 +26,7 @@ export const Register = () => {
 
     try {
       const res = await axios.post(
-        "http://45.93.139.98/api/auth/register",
+        "https://bibliotekatrenera.pl/api/auth/register",
         credentials
       );
       setRegistered(true);

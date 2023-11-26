@@ -14,7 +14,7 @@ export const Contact = () => {
 
     try {
       const res = await axios.post(
-        "http://45.93.139.98/api/contact/sendMessage",
+        "https://bibliotekatrenera.pl/api/contact/sendMessage",
         {
           email,
           text,

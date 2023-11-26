@@ -28,11 +28,14 @@ export const AddPost = () => {
       formData.append("file", file);
     }
 
-    const res = await axios.post("http://45.93.139.98/upload", formData);
+    const res = await axios.post(
+      "https://bibliotekatrenera.pl/api/upload",
+      formData
+    );
 
     const img = res.data.map((element) => element.location);
     console.log(img);
-    const res2 = await axios.post("http://45.93.139.98/api/posts", {
+    const res2 = await axios.post("https://bibliotekatrenera.pl/api/posts", {
       coachingPoints,
       title,
       desc,
