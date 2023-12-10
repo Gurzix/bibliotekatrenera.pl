@@ -80,14 +80,21 @@ export const Posts = () => {
         <YouNeedToBeLogged />
       ) : (
         <>
-          <Categories reFetch={reFetch} setCategory={setCategory} />
+          <Categories
+            reFetch={reFetch}
+            category={category}
+            setCategory={setCategory}
+            setFilters={setFilters}
+          />
 
           <div className="posts">
             <div className="postsContainer">
               <div className="searchContainer">
                 <h2 className="searchTitleH1">Wyszukaj ćwiczenie</h2>
                 <div className="listItem">
-                  <label htmlFor="title">Szukaj w tytule:</label>
+                  <label htmlFor="title">{`Szukaj w tytule ${
+                    category ? `dla kategorii - ${category}` : ""
+                  }:`}</label>
                   <input
                     name="title"
                     type="text"
@@ -145,10 +152,10 @@ export const Posts = () => {
                   </div>
                 </div>
                 <button className="searchButtonPosts" onClick={handleClick}>
-                  Szukaj
+                  szukaj
                 </button>
                 <button className="resetButtonPosts" onClick={resetExercises}>
-                  resetuj{" "}
+                  pokaż wszystkie ćwiczenia{" "}
                 </button>
               </div>
               <div className="containerForRightSection">

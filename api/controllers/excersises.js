@@ -13,7 +13,9 @@ const createPost = async (req, res) => {
 const getFeatured = async (req, res) => {
   const { featured, limit } = req.query;
   try {
-    const posts = await Post.find({ featured: featured }).limit(limit);
+    const posts = await Post.find({ featured: featured })
+      .sort({ createdAt: -1 })
+      .limit(limit);
 
     res.status(200).json(posts);
     console.log(posts);

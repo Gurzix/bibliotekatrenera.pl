@@ -98,7 +98,12 @@
     flex: 2;
   }
 }
-
+@media (min-width: 716px) {
+  .menuContainer,
+  .icons {
+    display: none;
+  }
+}
 @media (max-width: 700px) {
   .hamburgerCloseIcon {
     display: block;

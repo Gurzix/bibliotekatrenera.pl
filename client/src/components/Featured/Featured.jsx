@@ -16,8 +16,9 @@ export const Featured = () => {
   }, [isInView]);
 
   const { data } = useFetch(
-    `http://45.93.139.98/api/posts/featured?featured=true&limit=3`
+    `https://bibliotekatrenera.pl/api/posts/featured?featured=true&limit=3`
   );
+  console.log(data);
 
   return (
     <>

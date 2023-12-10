@@ -12,8 +12,7 @@ export const WhyUs = () => {
   const data = [
     {
       id: 1,
-      text: `  Z naszej Biblioteki, mimo, że powstała niedawno, korzysta ponad
-    200 osób. Ta liczba z dnia na dzień wzrasta, co świadczy o coraz
+      text: `  Baza ćwiczeń jest tworzona przez trenerów. Liczba korzystających z Biblioteki z dnia na dzień wzrasta, co świadczy o coraz
     większej popularności naszego serwisu i zaufaniu jakim darzą nas
     jego członkowie.`,
       img: "https://biblioteka-trenera.s3.eu-central-1.amazonaws.com/img+static/members.webp",
