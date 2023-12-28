@@ -14,7 +14,7 @@ export const About = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
 
-  const { data } = useFetch("http://45.93.139.98/api/coaches");
+  const { data } = useFetch("https://bibliotekatrenera.pl/api/coaches");
 
   return (
     <div className="about">
@@ -66,13 +66,16 @@ export const About = () => {
           </p>
         </div>
       </div>
-      {/* <h2 className="h2about">Nasi Trenerzy:</h2> */}
-      {/* <div className="bottomContent">
+      <h2 className="h2about">Tworzą dla nas:</h2>
+      <div className="bottomContent">
         {data.map((coach) => (
-          <div className="card" key={coach._id}>
-            <img src={coach.img} alt="" className="fpImg" />
+          <div className="cardContainer" key={coach._id}>
+            <div className="card">
+              <Link to={`/about/${coach._id}`}>
+                <img src={coach.img} alt="" className="fpImg" />
+              </Link>
 
-            <div className="textContainer">
+              {/* <div className="textContainer">
               <div className="infoAboutCoach">
                 <PermIdentityIcon className="icon" /> <span>{coach.name}</span>
               </div>
@@ -90,15 +93,17 @@ export const About = () => {
                 />
                 <span> 25</span>
               </div>
-            </div>
-            <div className="buttonContainer">
+            </div> */}
+              {/* <div className="buttonContainer">
               <Link to={`/about/${coach._id}`}>
                 <button className="aboutCoachButton">Więcej o trenerze</button>
               </Link>
+            </div> */}
             </div>
+            <p className="coachName"> {coach.name}</p>
           </div>
         ))}
-      </div> */}
+      </div>
     </div>
   );
 };

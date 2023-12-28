@@ -28,7 +28,10 @@ export const AddPost = () => {
       formData.append("file", file);
     }
 
-    const res = await axios.post("http://localhost:5000/api/upload", formData);
+    const res = await axios.post(
+      "https://bibliotekatrenera.pl/api/upload",
+      formData
+    );
 
     const img = res.data.map((element) => element.location);
     console.log(img);

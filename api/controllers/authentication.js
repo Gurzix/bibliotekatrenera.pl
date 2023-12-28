@@ -10,10 +10,10 @@ const userSchema = Joi.object().keys({
   email: Joi.string().email().required().label("Podaj poprawny adres email"),
   username: Joi.string().required(),
   password: Joi.string()
-    .regex(/^[a-zA-Z0-9]{6,30}$/)
+    .regex(/^[a-zA-Z0-9_\-\.]{6,30}$/)
     .required()
     .label(
-      "Hasło nie spełnia wymogów - użyj małej i dużej litery, liczby i minimum 6 znaków"
+      "Hasło nie spełnia wymogów - użyj małej i dużej litery, liczby, znaku specjalnego i minimum 6 znaków"
     ),
 });
 

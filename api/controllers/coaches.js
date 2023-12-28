@@ -14,8 +14,6 @@ const addCoach = async (req, res) => {
 const getPostsByCoach = async (req, res) => {
   const { name } = req.query;
 
-  console.log(req.query);
-
   try {
     let posts;
 
@@ -38,6 +36,22 @@ const findCoach = async (req, res) => {
   }
 };
 
+const findCoachByHisName = async (req, res) => {
+  const { name } = req.query;
+  try {
+    if (name) {
+      const coach = await Coach.findOne({
+        name,
+      });
+
+      res.redirect(`http://localhost:3000/about/${coach._id}`);
+    }
+  } catch (err) {
+    res.status(500).json(err);
+    console.log(err);
+  }
+};
+
 const allCoaches = async (req, res) => {
   try {
     const coach = await Coach.find();
@@ -49,6 +63,7 @@ const allCoaches = async (req, res) => {
 
 module.exports = {
   findCoach,
+  findCoachByHisName,
   getPostsByCoach,
   addCoach,
   allCoaches,

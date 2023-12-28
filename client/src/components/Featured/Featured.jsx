@@ -37,7 +37,7 @@ export const Featured = () => {
         {data.map((item) => (
           <Link to={`/posts/${item._id}`} key={item._id}>
             <div className="featuredItem">
-              <img src={item.img} alt="" className="featuredImg" />
+              <img src={item.img[0]} alt="" className="featuredImg" />
 
               <div className="coveringTitleDiv">
                 <p>{item.title}</p>

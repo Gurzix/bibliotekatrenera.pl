@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./coachInfo.scss";
 import ContactEmergencyIcon from "@mui/icons-material/ContactEmergency";
 import SportsIcon from "@mui/icons-material/Sports";
@@ -6,17 +6,26 @@ import SportsSoccerIcon from "@mui/icons-material/SportsSoccer";
 import RecordVoiceOverIcon from "@mui/icons-material/RecordVoiceOver";
 import FastRewindIcon from "@mui/icons-material/FastRewind";
 import useFetch from "../../hooks/useFetch";
-import { useLocation } from "react-router-dom";
+import axios from "axios";
+import { useLocation, Link } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
 export const CoachInfo = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
-
+  const { user } = useContext(AuthContext);
   const location = useLocation();
   const path = location.pathname.split("/")[2];
-
-  const { data } = useFetch(`http://45.93.139.98/api/coaches/${path}`);
-  console.log(data);
+  const [posts, setPosts] = useState([]);
+  const { data } = useFetch(`https://bibliotekatrenera.pl/api/coaches/${path}`);
+  const coachPosts = posts.filter((post) => post.author === data.name);
+  useEffect(() => {
+    async function fetchData() {
+      const result = await axios.get("https://bibliotekatrenera.pl/api/posts");
+      setPosts(result.data);
+    }
+    fetchData();
+  }, []);
 
   return (
     <div className="wrapperCoachInfo">
@@ -41,7 +50,7 @@ export const CoachInfo = () => {
               className="infoAboutCoach"
             >
               <SportsSoccerIcon className="icon" />
-              <span>25 ćwiczeń</span>
+              <span>{coachPosts.length}</span>
             </div>
             <div title="znane języki" className="infoAboutCoach">
               <RecordVoiceOverIcon className="icon" />
@@ -64,6 +73,23 @@ export const CoachInfo = () => {
               <p>{data.desc}</p>
             </div>
           </div>
+          <h4>Ćwiczenia dodane przez Trenera:</h4>
+          {coachPosts.map((post) => (
+            <div key={post._id} className="containerForTitles">
+              <SportsSoccerIcon className="exTitleIcon" />
+              {user ? (
+                <Link className="link" to={`/posts/${post._id}`}>
+                  <span className="coachExTitles" key={post.title}>
+                    {post.title}
+                  </span>
+                </Link>
+              ) : (
+                <p className="notLoggedTitles" key={post.title}>
+                  {post.title}
+                </p>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </div>

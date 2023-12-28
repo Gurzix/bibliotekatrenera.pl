@@ -18,15 +18,12 @@ const getFeatured = async (req, res) => {
       .limit(limit);
 
     res.status(200).json(posts);
-    console.log(posts);
   } catch (err) {
     console.log(err);
   }
 };
 const getPosts = async (req, res) => {
   const { title, category, howManyPlayers, author, featured } = req.query;
-
-  console.log(req.query);
 
   try {
     let posts;
@@ -49,6 +46,8 @@ const getPosts = async (req, res) => {
       });
     } else if (featured) {
       posts = await Post.find({ featured: { $in: true } });
+    } else if (author) {
+      posts = await Post.find({ author: { $regex: new RegExp(author) } });
     } else {
       posts = await Post.find();
     }

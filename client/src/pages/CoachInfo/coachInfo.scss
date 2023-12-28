@@ -16,7 +16,7 @@
     display: flex;
     // border: 1px solid rgb(192, 188, 188);
     // border-radius: 10px;
-    height: 100vh;
+    min-height: 100vh;
     gap: 50px;
     padding: 70px;
     overflow: hidden;
@@ -76,6 +76,39 @@
       display: flex;
       flex-direction: column;
       flex: 1;
+      h4 {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        color: #343434;
+        width: 100%;
+        letter-spacing: 2px;
+        font-family: "Lora";
+      }
+      .containerForTitles {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-top: 8px;
+        .exTitleIcon {
+          color: rgb(163, 160, 160);
+        }
+
+        span.coachExTitles {
+          color: #343434;
+          letter-spacing: 2px;
+          font-family: "Lora";
+          font-size: 13px;
+          text-align: center;
+          width: 100%;
+        }
+        .notLoggedTitles {
+          color: #343434;
+          letter-spacing: 2px;
+          font-family: "Lora";
+          font-size: 13px;
+          width: 100%;
+        }
+      }
 
       .items {
         display: flex;
@@ -89,6 +122,7 @@
             font-weight: 100;
             font-size: 16px;
             line-height: 1.8;
+            letter-spacing: 2px;
             color: #343434;
           }
         }
@@ -103,5 +137,42 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 700px) {
+  .wrapperCoachInfo .container {
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 30px;
+  }
+
+  .wrapperCoachInfo .container .left .imgContainer {
+    width: 170px;
+    height: 170px;
+    align-self: center;
+  }
+  .wrapperCoachInfo .container .left .info .infoAboutCoach .icon {
+    font-size: 20px;
+    width: auto;
+  }
+  .wrapperCoachInfo .container .textContainer .items h2 {
+    font-size: 22px;
+  }
+  .wrapperCoachInfo .container .textContainer .items .item p {
+    font-size: 14px;
+    text-align: justify;
+  }
+  .wrapperCoachInfo .container .textContainer h4 {
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.7;
+  }
+  .wrapperCoachInfo
+    .container
+    .textContainer
+    .containerForTitles
+    span.coachExTitles {
+    font-size: 11px;
   }
 }
