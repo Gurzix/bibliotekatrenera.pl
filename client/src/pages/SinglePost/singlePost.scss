@@ -114,40 +114,64 @@
     border: none;
     width: 100%;
   }
-  .singlePost .leftSide .mainImg img {
-    height: 159px;
-    transform: scale(1.2);
-    margin-top: 20px;
+
+  .singlePostWrapper .singlePost .leftSide .images {
+    flex-direction: column;
+    align-items: center;
+  }
+  .singlePostWrapper .singlePost .leftSide .mainImg img {
+    width: 220px;
+    height: 122px;
+    object-fit: contain;
   }
 
-  .singlePost .leftSide .images img {
-    margin-top: 20px;
-    width: 50%;
-    height: 150px;
+  .singlePostWrapper .singlePost .leftSide .images img {
+    width: 159px;
+    height: 131px;
     object-fit: cover;
     cursor: pointer;
   }
-  .singlePost .rightSide h1 {
+
+  .singlePostWrapper .singlePost .rightSide h1 {
     font-size: 18px;
-    line-height: 1.7;
+    line-height: 1.8;
     text-align: center;
-    width: 100%;
+    width: 255px;
+    margin-bottom: 10px;
   }
 
+  .singlePostWrapper .singlePost .rightSide .wrapperFilters {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
   .singlePost .rightSide .wrapperFilters .wrapperForSinglePostIcon p.filter {
     font-size: 13px;
   }
   .singlePost .rightSide .wrapperFilters .wrapperForSinglePostIcon {
+    height: auto;
+    width: 200px;
     flex-direction: column;
-    height: 40px;
+    margin-bottom: 14px;
   }
-  .singlePost .rightSide h3 {
+  .singlePostWrapper .singlePost .rightSide h3 {
     margin-top: 20px;
     text-align: center;
   }
-  .singlePost .rightSide p.desc {
+  .singlePostWrapper
+    .singlePost
+    .rightSide
+    .wrapperFilters
+    .wrapperForSinglePostIcon
+    .iconFilters {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  .singlePostWrapper .singlePost .rightSide p.desc {
     margin-top: 20px;
     padding: 2px;
     text-align: justify;
+    width: 245px;
   }
 }

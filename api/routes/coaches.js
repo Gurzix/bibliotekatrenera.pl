@@ -11,7 +11,8 @@ const {
 
 router.post("/", addCoach);
 // router.get("/", getPostsByCoach);
-router.get("/name", findCoachByHisName);
-router.get("/:name", findCoach);
+
 router.get("/", allCoaches);
+router.get("/name", findCoachByHisName);
+router.get("/:id", findCoach);
 module.exports = router;

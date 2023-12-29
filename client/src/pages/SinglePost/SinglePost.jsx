@@ -5,12 +5,13 @@ import useFetch from "../../hooks/useFetch";
 import SportsSoccerIcon from "@mui/icons-material/SportsSoccer";
 import PersonIcon from "@mui/icons-material/Person";
 import DriveFileRenameOutlineIcon from "@mui/icons-material/DriveFileRenameOutline";
-
+import axios from "axios";
 export const SinglePost = () => {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
   const { data } = useFetch(`https://bibliotekatrenera.pl/api/posts/${path}`);
   const [images, setImages] = useState();
+  const [coaches, setCoaches] = useState([]);
 
   useEffect(() => {
     setImages(data.img);
@@ -20,6 +21,17 @@ export const SinglePost = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
 
+  useEffect(() => {
+    async function fetchData() {
+      const result = await axios.get(
+        "https://bibliotekatrenera.pl/api/coaches"
+      );
+      setCoaches(result);
+    }
+    fetchData();
+  }, []);
+
+  // console.log(coaches.data?.filter((p) => p.name === data.author)[0]._id);
   const [selectedImg, setSelectedImg] = useState("");
 
   const handleImg = (e) => {
@@ -64,7 +76,9 @@ export const SinglePost = () => {
               <DriveFileRenameOutlineIcon className="iconFilters" />
               <p className="filter">
                 <Link
-                  to={`http://localhost:5000/api/coaches/name?name=${data.author}`}
+                  to={`/about/${
+                    coaches.data?.filter((p) => p.name === data?.author)[0]._id
+                  }`}
                 >
                   {data.author}
                 </Link>

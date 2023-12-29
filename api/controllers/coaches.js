@@ -43,8 +43,7 @@ const findCoachByHisName = async (req, res) => {
       const coach = await Coach.findOne({
         name,
       });
-
-      res.redirect(`http://localhost:3000/about/${coach._id}`);
+      res.status(200);
     }
   } catch (err) {
     res.status(500).json(err);

@@ -16,9 +16,11 @@ export const CoachInfo = () => {
   const { user } = useContext(AuthContext);
   const location = useLocation();
   const path = location.pathname.split("/")[2];
+  console.log(path);
   const [posts, setPosts] = useState([]);
   const { data } = useFetch(`https://bibliotekatrenera.pl/api/coaches/${path}`);
-  const coachPosts = posts.filter((post) => post.author === data.name);
+  console.log(data);
+  const coachPosts = posts.filter((post) => post.author === data?.name);
   useEffect(() => {
     async function fetchData() {
       const result = await axios.get("https://bibliotekatrenera.pl/api/posts");
@@ -32,18 +34,18 @@ export const CoachInfo = () => {
       <div className="container">
         <div className="left">
           <div className="imgContainer">
-            <img src={data.img} alt="" />
+            <img src={data?.img} alt="" />
           </div>
           <div className="info">
             <div title="obecny klub" className="infoAboutCoach">
-              <SportsIcon className="icon" /> <span>{data.club}</span>
+              <SportsIcon className="icon" /> <span>{data?.club}</span>
             </div>
             <div
               title="posiadana licencja trenerska"
               className="infoAboutCoach"
             >
               <ContactEmergencyIcon className="icon" />
-              <span>Trener {data.license}</span>
+              <span>Trener {data?.license}</span>
             </div>
             <div
               title="liczba ćwiczeń dodanych do Biblioteki Trenera"
@@ -54,23 +56,23 @@ export const CoachInfo = () => {
             </div>
             <div title="znane języki" className="infoAboutCoach">
               <RecordVoiceOverIcon className="icon" />
-              <span>{data.languagesSpoken}</span>
+              <span>{data?.languagesSpoken}</span>
             </div>
             <div
               title="poprzednie kluby w roli trenera"
               className="infoAboutCoach"
             >
               <FastRewindIcon className="icon" />
-              <span style={{ lineHeight: "1.7" }}>{data.formerClubs}</span>
+              <span style={{ lineHeight: "1.7" }}>{data?.formerClubs}</span>
             </div>
           </div>
         </div>
 
         <div className="textContainer">
           <div className="items">
-            <h2>{data.name}</h2>
+            <h2>{data?.name}</h2>
             <div className="item">
-              <p>{data.desc}</p>
+              <p>{data?.desc}</p>
             </div>
           </div>
           <h4>Ćwiczenia dodane przez Trenera:</h4>
