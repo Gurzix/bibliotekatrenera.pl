@@ -10,8 +10,8 @@ export const SinglePost = () => {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
   const { data } = useFetch(`https://bibliotekatrenera.pl/api/posts/${path}`);
+  const [coaches, setCoaches] = useState();
   const [images, setImages] = useState();
-  const [coaches, setCoaches] = useState([]);
 
   useEffect(() => {
     setImages(data.img);
@@ -24,14 +24,13 @@ export const SinglePost = () => {
   useEffect(() => {
     async function fetchData() {
       const result = await axios.get(
-        "https://bibliotekatrenera.pl/api/coaches"
+        `https://bibliotekatrenera.pl/api/coaches`
       );
-      setCoaches(result);
+      setCoaches(result.data);
     }
     fetchData();
   }, []);
 
-  // console.log(coaches.data?.filter((p) => p.name === data.author)[0]._id);
   const [selectedImg, setSelectedImg] = useState("");
 
   const handleImg = (e) => {
@@ -74,15 +73,14 @@ export const SinglePost = () => {
           <div className="wrapperFilters">
             <div className="wrapperForSinglePostIcon">
               <DriveFileRenameOutlineIcon className="iconFilters" />
-              <p className="filter">
-                <Link
-                  to={`/about/${
-                    coaches.data?.filter((p) => p.name === data?.author)[0]._id
-                  }`}
-                >
-                  {data.author}
-                </Link>
-              </p>
+              {coaches?.map(
+                (coach) =>
+                  coach.name === data.author && (
+                    <p key={coach.name} className="filter">
+                      <Link to={`/about/${coach._id}`}>{data.author}</Link>
+                    </p>
+                  )
+              )}
             </div>
             <div className="wrapperForSinglePostIcon">
               <SportsSoccerIcon className="iconFilters" />

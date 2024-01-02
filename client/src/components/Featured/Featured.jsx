@@ -18,7 +18,6 @@ export const Featured = () => {
   const { data } = useFetch(
     `https://bibliotekatrenera.pl/api/posts/featured?featured=true&limit=3`
   );
-  console.log(data);
 
   return (
     <>

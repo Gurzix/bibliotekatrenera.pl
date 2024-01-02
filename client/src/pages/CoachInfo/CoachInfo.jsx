@@ -16,10 +16,10 @@ export const CoachInfo = () => {
   const { user } = useContext(AuthContext);
   const location = useLocation();
   const path = location.pathname.split("/")[2];
-  console.log(path);
+
   const [posts, setPosts] = useState([]);
   const { data } = useFetch(`https://bibliotekatrenera.pl/api/coaches/${path}`);
-  console.log(data);
+
   const coachPosts = posts.filter((post) => post.author === data?.name);
   useEffect(() => {
     async function fetchData() {
