@@ -8,6 +8,7 @@
   );
   z-index: -1;
   min-height: 110vh;
+  padding-bottom: 30px;
 
   .container {
     z-index: 2;
@@ -84,6 +85,7 @@
         letter-spacing: 2px;
         font-family: "Lora";
       }
+
       .containerForTitles {
         display: flex;
         align-items: center;
@@ -91,6 +93,9 @@
         margin-top: 8px;
         .exTitleIcon {
           color: rgb(163, 160, 160);
+        }
+        .lockedIcon {
+          color: #e65555;
         }
 
         span.coachExTitles {

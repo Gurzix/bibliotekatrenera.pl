@@ -5,6 +5,7 @@ import SportsIcon from "@mui/icons-material/Sports";
 import SportsSoccerIcon from "@mui/icons-material/SportsSoccer";
 import RecordVoiceOverIcon from "@mui/icons-material/RecordVoiceOver";
 import FastRewindIcon from "@mui/icons-material/FastRewind";
+import LockIcon from "@mui/icons-material/Lock";
 import useFetch from "../../hooks/useFetch";
 import axios from "axios";
 import { useLocation, Link } from "react-router-dom";
@@ -76,9 +77,14 @@ export const CoachInfo = () => {
             </div>
           </div>
           <h4>Ćwiczenia dodane przez Trenera:</h4>
+
           {coachPosts.map((post) => (
             <div key={post._id} className="containerForTitles">
-              <SportsSoccerIcon className="exTitleIcon" />
+              {user ? (
+                <SportsSoccerIcon className="exTitleIcon" />
+              ) : (
+                <LockIcon className="lockedIcon" />
+              )}
               {user ? (
                 <Link className="link" to={`/posts/${post._id}`}>
                   <span className="coachExTitles" key={post.title}>
