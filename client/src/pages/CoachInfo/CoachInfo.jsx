@@ -31,7 +31,7 @@ export const CoachInfo = () => {
   }, []);
 
   return (
-    <div className="wrapperCoachInfo">
+    <div className="wrapperCoachInfo wrci">
       <div className="container">
         <div className="left">
           <div className="imgContainer">
