@@ -68,9 +68,25 @@ const getSinglePost = async (req, res) => {
   }
 };
 
+const updatePost = async (req, res) => {
+  try {
+    const post = await Post.findByIdAndUpdate(
+      req.params.id,
+      {
+        $inc: { views: 1 },
+      }
+      // { new: true }
+    );
+    res.status(200).json(post);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+};
+
 module.exports = {
   createPost,
   getPosts,
   getSinglePost,
   getFeatured,
+  updatePost,
 };

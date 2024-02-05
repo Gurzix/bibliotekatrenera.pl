@@ -5,6 +5,7 @@ import useFetch from "../../hooks/useFetch";
 import SportsSoccerIcon from "@mui/icons-material/SportsSoccer";
 import PersonIcon from "@mui/icons-material/Person";
 import DriveFileRenameOutlineIcon from "@mui/icons-material/DriveFileRenameOutline";
+// import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import axios from "axios";
 export const SinglePost = () => {
   const location = useLocation();
@@ -19,6 +20,19 @@ export const SinglePost = () => {
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
+
+  useEffect(() => {
+    async function updatePost() {
+      try {
+        const result = await axios.put(
+          `http://localhost:5000/api/posts/${path}`
+        );
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    updatePost();
   }, []);
 
   useEffect(() => {
@@ -69,6 +83,10 @@ export const SinglePost = () => {
         </div>
         <div className="rightSide">
           <h1>{data.title}</h1>
+          {/* <p>
+            <RemoveRedEyeIcon />
+            <span>{data.views}</span>
+          </p> */}
 
           <div className="wrapperFilters">
             <div className="wrapperForSinglePostIcon">

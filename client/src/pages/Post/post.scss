@@ -33,6 +33,28 @@
         font-size: 14px;
       }
     }
+    .howManyViewsContainer {
+      background-color: black;
+      position: absolute;
+      font-size: 14px;
+      opacity: 0.6;
+      height: max-content;
+      width: 36px;
+      top: 5%;
+      right: 5%;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4px;
+
+      svg {
+        font-size: 14px;
+      }
+      span {
+        margin-left: 4px;
+      }
+    }
   }
 }
 
