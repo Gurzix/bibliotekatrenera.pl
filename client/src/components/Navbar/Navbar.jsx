@@ -115,7 +115,7 @@ export const Navbar = () => {
             )}
           </div>
           <div className="icons">
-            <Link to="/" className="link">
+            <Link to="https://twitter.com/Football8Drills" className="link">
               <TwitterIcon className="twitter" />
             </Link>
             <Link to="/" className="link">
