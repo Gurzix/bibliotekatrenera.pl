@@ -57,6 +57,8 @@ export const Posts = () => {
       : `https://bibliotekatrenera.pl/api/posts`
   );
 
+  data.sort((a, b) => a.createdAt.localeCompare(b.createdAt)).reverse();
+
   const resetExercises = () => {
     titleRef.current.value = "";
     authorRef.current.value = "";
